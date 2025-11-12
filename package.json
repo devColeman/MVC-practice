@@ -1,0 +1,26 @@
+{
+  "name": "mvc-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devColeman/MVC-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devColeman/MVC-practice/issues"
+  },
+  "homepage": "https://github.com/devColeman/MVC-practice#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11"
+  }
+}

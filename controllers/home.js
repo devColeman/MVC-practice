@@ -1,5 +1,6 @@
 const blog = require('../model/blog')
 
+
 module.exports = {
     getIndex: (req,res)=>{
         res.render('index.ejs')

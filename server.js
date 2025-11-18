@@ -19,7 +19,7 @@ app.listen(process.env.PORT, () => {
     console.log('This thing works')
 })
 
-// what to next is add mongodb
+
 
 // let think about the rest of the app its blog enginge so we need a way to post maybe sepater page
 // then we need to work on creating the post and adding it to the page

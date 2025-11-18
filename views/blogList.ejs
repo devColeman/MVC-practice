@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blog Post</h1>
+   <%= blogItems%>
+   <% blogItems.forEach( blog => { %>
+    <div>
+            <h2><%= blog.title %></h2>
+            <p><%= blog.content %></p>
+            <p><%= blog.author %></p>
+    <% }) %> 
+
+    // add public folder for the div then add if there is no blogsitems also add a linke to add post,
+    // once these are done we can start looking into comments
+    </div>  
+</body>
+</html>

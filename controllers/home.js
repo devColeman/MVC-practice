@@ -15,5 +15,13 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
+    }, 
+    getBlogs: async (req,res)=>{
+        try{
+            const blogThing = await blog.find()
+            res.render('blogList.ejs', {blogItems: blogThing })
+        }catch(err){
+            console.log(err)
+        }
     }
 }

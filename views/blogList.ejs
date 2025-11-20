@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog Post</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/main.js" defer></script>
 </head>
 <body>
     <h1>Blog Post</h1>
+    <a href="/">home</a>
+    <a href="/add">add a post</a>
+    
   
-   <% blogItems.forEach( blog => { %>
-        
-         <div>
-            <span> <%= blogItems%></span>
+   <% blogItems.forEach((blog, i) => { %>
+       
+         <div id="">
+            <span> <%= blogItems[i]%></span>
             <h2><%= blog.title %></h2>
             <p><%= blog.content %></p>
-            <p><%= blog.author %></p>
+            <p id="likes">0 ♡</p>
+            <p>By: <%= blog.author %></p>
          </div>
     <% }) %> 
 

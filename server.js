@@ -3,6 +3,7 @@ const app = express()
 const mainRoutes = require('./routes/main')
 const connectDB = require('./config/database')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 connectDB()
 
@@ -14,6 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(express.json())
+app.use(cors())
 
 app.use('/', mainRoutes)
 

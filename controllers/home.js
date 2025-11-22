@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb')
 const blog = require('../model/blog')
 
 
@@ -10,7 +11,7 @@ module.exports = {
     },
     addPost: async (req,res)=>{
        try{
-            await blog.create({title: req.body.title, content: req.body.content, author: req.body.author })
+            await blog.create({title: req.body.title, content: req.body.content, author: req.body.author, likes: 0, })
             res.redirect('/blogs')
         }catch(err){
             console.log(err)
@@ -23,5 +24,27 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
-}
+    },
+    addLike: async (req, res)=>{
+        try{
+            const receivedData = req.body;
+            const docID = req.body;
+                console.log('Received data:', receivedData);
+                console.log(docID.postID)
+                const k = new ObjectId(req.body.postID)
+                let z = {_id: k}
+                console.log(z)
+
+
+                blog.collection.updateOne(
+                    { _id:  k}, 
+                    { $inc: { like: 1}})             
+                // we have no idea if this will work we are kinda winging it
+                res.redirect('/blogs')
+            } catch(err){
+            console.log(err)
+        }
+
+
+
+    }}

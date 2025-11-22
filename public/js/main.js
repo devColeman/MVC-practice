@@ -2,7 +2,7 @@ let likeBtn = document.getElementById('likes')
 let parentElement = likeBtn.parentElement
 
 console.log(likeBtn)
-console.log(parentElement)
+console.log(parentElement.id)
 
 likeBtn.addEventListener("click", async function () {
     
@@ -11,7 +11,7 @@ likeBtn.addEventListener("click", async function () {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ username: "example" }),
+        body: JSON.stringify({ postID: parentElement.id }),
       });
 
 })

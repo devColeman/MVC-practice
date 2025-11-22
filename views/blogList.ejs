@@ -15,11 +15,11 @@
   
    <% blogItems.forEach((blog, i) => { %>
        
-         <div id="">
+         <div id="<%= blogItems[i].id %>">
             <span> <%= blogItems[i]%></span>
             <h2><%= blog.title %></h2>
             <p><%= blog.content %></p>
-            <p id="likes">0 ♡</p>
+            <p id="likes">♡ <%= blog.likes %></p>
             <p>By: <%= blog.author %></p>
          </div>
     <% }) %> 

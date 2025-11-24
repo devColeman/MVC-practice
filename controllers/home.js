@@ -27,18 +27,19 @@ module.exports = {
     },
     addLike: async (req, res)=>{
         try{
-            const receivedData = req.body;
-            const docID = req.body;
-                console.log('Received data:', receivedData);
+                const docID = req.body;
                 console.log(docID.postID)
-                const k = new ObjectId(req.body.postID)
-                let z = {_id: k}
-                console.log(z)
-
+                let pls = docID.postID
 
                 blog.collection.updateOne(
-                    { _id:  k}, 
-                    { $inc: { like: 1}})             
+                    { _id: pls },
+                    { $inc: { likes: 1 } },
+                    console.log("added?")
+                )
+
+                // blog.collection.updateOne(
+                //     { _id:  k}, 
+                //     { $inc: { like: 1}})             
                 // we have no idea if this will work we are kinda winging it
                 res.redirect('/blogs')
             } catch(err){

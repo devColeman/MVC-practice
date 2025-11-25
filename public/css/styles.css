@@ -10,3 +10,12 @@ h2, .author {
     justify-content: center;
 }
 
+#likes {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#likes:hover {
+    background-color: grey;
+}
+

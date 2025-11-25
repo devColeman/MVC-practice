@@ -1,21 +1,18 @@
-let likeBtn = document.getElementById('likes')
-let parentElement = likeBtn.parentElement
+// const { all } = require("../../routes/main")
 
-console.log(likeBtn)
-console.log(parentElement.id)
 
-likeBtn.addEventListener("click", async function () {
-    
+document.getElementById("container").addEventListener("click", async function(e) {
     await fetch("/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ postID: parentElement.id }),
-        
-      });
-      window.location.reload()
-})
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ postID: event.target.id }),
+            
+          });
+          window.location.reload()
+    
+});
 
-// check if the lets works then check if add the id to the parent element 
-// next when need to work on the fetch 
+
+

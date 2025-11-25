@@ -12,17 +12,20 @@
     <a href="/">home</a>
     <a href="/add">add a post</a>
     
-  
+  <div id="container">
    <% blogItems.forEach((blog, i) => { %>
        
          <div id="<%= blogItems[i].title %>">
             <span> <%= blogItems[i]%></span>
             <h2><%= blog.title %></h2>
             <p><%= blog.content %></p>
-            <p id="likes">♡ <%= blog.likes %></p>
+            <button id="<%= blogItems[i].title %>">♡</button>
+            <p><%= blog.likes %></p>
+            
             <p>By: <%= blog.author %></p>
          </div>
     <% }) %> 
+</div>
 
 
     

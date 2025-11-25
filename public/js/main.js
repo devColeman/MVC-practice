@@ -12,8 +12,9 @@ likeBtn.addEventListener("click", async function () {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ postID: parentElement.id }),
+        
       });
-
+      window.location.reload()
 })
 
 // check if the lets works then check if add the id to the parent element 

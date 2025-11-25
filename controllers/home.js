@@ -30,20 +30,14 @@ module.exports = {
                 const docID = req.body;
                 console.log(docID.postID)
                 let pls = docID.postID
-
-                blog.collection.updateOne(
-                    { _id: pls },
-                    { $inc: { likes: 1 } },
-                    console.log("added?")
-                )
-
-                // blog.collection.updateOne(
-                //     { _id:  k}, 
-                //     { $inc: { like: 1}})             
-                // we have no idea if this will work we are kinda winging it
+                const result = await blog.collection.updateOne(
+                    { title: pls },
+                    { $inc: { likes: 1 } }
+                );
+                // this gets the document by title :)
                 res.redirect('/blogs')
             } catch(err){
-            console.log(err)
+                console.error("❌ Database error during update:", error)
         }
 
 
